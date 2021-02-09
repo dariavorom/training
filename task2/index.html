@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Form</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        button img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    
+<form action="#">
+    <label for="name" display="block">
+        Member name:
+        <input type="text" id="name">
+        <b>*req</b>
+    </label>
+    <label for="email">
+        Email:
+        <input type="email" id="email">
+        <b>*req</b>
+    </label>
+    <label for="school">
+        School:
+        <input type="text" id="school">
+        <b>*req</b>
+    </label>
+    <button type="submit"><img alt="submit" src="button.png"></button>
+</form>
 </body>
 </html>
