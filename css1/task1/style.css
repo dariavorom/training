@@ -1,0 +1,48 @@
+table {
+    width: 500px;
+    background: #616570;
+    font-family: Arial, sans-serif;
+}
+td {
+    padding: 10px;
+    position: relative;
+}
+.title {
+    font-size: 26px;
+    color: #9ca2b4;
+}
+.right {
+    width: 180px;
+    color: #fff;
+    font-style: italic;
+}
+.br {
+    display: block;
+}
+.yellow {
+    color: #e0e121;
+}
+.red {
+    color: #b40a0d;
+    font-weight: 700;
+}
+.grey {
+    color: #9ca2b4;
+}
+.orange {
+    color: #b46f19;
+}
+.disc {
+    position: relative;
+    padding-left: 15px;
+}
+.disc::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #45e111;
+    border-radius: 50%;
+    top: calc(50% - 6px);
+    left: 0;
+    position: absolute;
+}
