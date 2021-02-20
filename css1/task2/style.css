@@ -1,0 +1,49 @@
+
+table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #9ca2b4;
+    padding: 10px;
+}
+th {
+    background: #3ce137;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: left;
+}
+th:first-child {
+    width: 200px;
+}
+th:nth-child(n+2) {
+    width: 150px;
+}
+th:last-child{
+    width: 110px;
+}
+tr:nth-child(even) {
+    background: #f5efb1;
+}
+.germany, .mexico, .uk {
+    position: relative;
+    padding-left: 40px;
+}
+.germany:before {
+    content: url("germany.png");
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 10px);
+}
+.mexico:before {
+    content: url("mexico.png");
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 10px);
+}
+.uk:before {
+    content: url("uk.png");
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 10px);
+}
