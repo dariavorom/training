@@ -1,0 +1,13 @@
+p {
+    color: #0094ff;
+    font-family: Consolas, serif;
+}
+p:first-line {
+    font-weight: 700;
+    line-height: 50px;
+}
+p:first-letter {
+    font-family: Edwardian Script ITC, serif;
+    font-size: 3rem;
+
+}
