@@ -184,6 +184,7 @@ body section article footer p time {
 
 body section article footer p a {
     text-decoration: none;
+    color: #b45ef3;
 }
 
 body section article footer p a:hover {
