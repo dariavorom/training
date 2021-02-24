@@ -1,0 +1,225 @@
+body {
+    font-family: 'Nova Mono', monospace;
+    font-size: 14px;
+}
+td, tr {
+    padding: 0;
+}
+.main {
+    color: #1c2463;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 4px;
+    background: #b9daf9;
+    width: 450px;
+}
+.title {
+    position: relative;
+    padding: 4px 35px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+.title:before {
+    content: url("calculator.png");
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 12px);
+}
+.table2 {
+    width: 100%;
+    border: 1px solid #7a8692;
+    border-spacing: 0;
+}
+.table2_row {
+    border-bottom: 1px solid #aaaaaa;
+    background: linear-gradient(to bottom, #ffffff 0%, #d2daef 50%);
+    padding: 3px 5px 0;
+}
+.link {
+    color: inherit;
+    text-decoration: none;
+    margin-right: 15px;
+    font-family: Arial, sans-serif;
+}
+.input, .table4, .letter button, .letterUp button, .num button, .radio {
+    border-radius: 3px;
+    border: 1px solid #bac1c7;
+}
+.input {
+    width: 99%;
+    max-height: 40px;
+    background: linear-gradient(to bottom, #e0e5f7 10%, white 80%);
+    padding: 20px 5px 10px 0;
+    text-align: right;
+}
+input::placeholder {
+    color: black;
+    text-align: right;
+    font-size: 20px;
+    font-family: 'Nova Mono', monospace;
+}
+.table3 {
+    width: 100%;
+    background: linear-gradient(to top, #d8e4f0 70%, #eaf3fc 100%);
+    padding: 7px;
+}
+.table4 {
+    width: 100%;
+    padding-left: 14px;
+    margin-top: 4px;
+}
+.table4 td {
+    vertical-align: top;
+    text-align: left;
+}
+span {
+    text-decoration: underline;
+}
+span.br {
+    color: #616570;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.br.right {
+    text-align: right;
+    margin-right: 15px;
+}
+.radio {
+    font-family: Arial, sans-serif;
+}
+.radio input {
+    margin: 0 0 7px 5px;
+}
+.table5 {
+    width: 103%;
+    border-spacing: 4px;
+    margin: 0 -4px
+}
+.table5 td {
+    width: 38px;
+    height: 30px;
+}
+.table5 button {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #eef5fb 0%, #d3e1ee 50%);
+    padding: 0;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    color: #1c2463;
+    font-size: 12px;
+}
+.letterUp button {
+    background: #d8e4f0;
+    border: 1px solid #c3cfdb;
+}
+.num button {
+    background: #eff4fa;
+    font-size: 16px;
+}
+.num.big button {
+    width: 100%;
+}
+.letterUp.empty, .letterUp.big {
+    position: relative;
+}
+.letterUp.empty button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+}
+.letterUp.big button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 64px;
+}
+button {
+    cursor: pointer;
+    transition: background, border .1s linear;
+}
+button:hover {
+    background: linear-gradient(to bottom, #f4f5cf 14%, #fad46f 72%, #f4f5cf 100%);
+    border: 1px solid #e4e389;
+}
+
+/*Кнопки верхние*/
+.buttons {
+    position: absolute;
+    top: -6px;
+    right: 8px;
+    display: flex;
+    justify-content: flex-end;
+    height: 20px;
+    cursor: pointer;
+}
+.roll, .large {
+    width: 22px;
+}
+.close {
+    width: 38px;
+}
+.roll {
+    background: linear-gradient(to bottom, #e8eff7 0%, #a5b7cb 50%);
+    border-bottom: 1px solid #5d6e78;
+    border-left: 1px solid #5d6e78;
+    border-right: 1px solid #5d6e78;
+    border-bottom-left-radius: 3px;
+}
+.roll:before {
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    height: 2px;
+    width: 10px;
+    background-color: #fff;
+    border: 1px solid #5d6e78;
+    border-radius: 1px;
+}
+.large {
+    background: linear-gradient(to bottom, #e8eff7 0%, #b7c3db 50%);
+    border-right: 1px solid #5d6e78;
+    border-bottom: 1px solid #5d6e78;
+}
+.large:before, .large:after {
+    content: ' ';
+    position: absolute;
+    border: 1px solid #b5bec7;
+}
+.large:before {
+    background-color: #d3dde7;
+    top: 5px;
+    left: 28px;
+    height: 9px;
+    width: 12px;
+}
+.large:after {
+    background-color: #c0cad4;
+    top: 8px;
+    left: 31px;
+    height: 3px;
+    width: 6px;
+}
+.close {
+    background: linear-gradient(to bottom, #f6a7a0 0%, #b35d4e 50%);
+    border-bottom: 1px solid #5d6e78;
+    border-right: 1px solid #5d6e78;
+    border-bottom-right-radius: 3px;
+}
+.close:before, .close:after {
+    content: "x";
+    position: absolute;
+    top: 7px;
+    left: 59px;
+    font-size: 19px;
+    color: #e8eff7;
+    font-weight: 900;
+    line-height: 0;
+    -webkit-text-stroke: 1px #5d6e78;
+}
+
