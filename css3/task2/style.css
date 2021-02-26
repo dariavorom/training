@@ -1,9 +1,12 @@
 
 main {
-    width: 530px;
+    width: 560px;
+    padding: 15px;
+    background: #f0f0f0;
     margin: 0 auto;
     font-family: Arial,sans-serif;
     font-size: 16px;
+    border-radius: 10px;
 }
 h1 {
     font-weight: 400;
@@ -14,10 +17,12 @@ h1 {
 article {
     border: 1px solid gray;
     padding: 15px;
-    width: 100%;
     height: 180px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     position: relative;
+}
+article:last-child {
+    margin-bottom: 0;
 }
 article img {
     float: left;
