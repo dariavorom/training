@@ -1,0 +1,23 @@
+.list {
+    list-style: none;
+    font-size: 20px;
+}
+.list_item {
+    margin: 5px 0;
+    color: black;
+}
+.list_item a {
+    color: black;
+}
+.list_item:hover {
+    cursor: pointer;
+}
+.sub-list {
+    display: none;
+    list-style: none;
+    color: #616570;
+    margin-left: -20px;
+}
+.list_item:hover .sub-list {
+    display: block;
+}
