@@ -32,7 +32,7 @@ function task1(e) {
         for (let i = 0; i < 20; i++) {
             arr.push(i * 5)
         }
-        arr.forEach((item, i) => jsConsole.writeLine(arr[i]))
+        arr.forEach((item, i) => jsConsole.writeLine(item))
     }
 }
 
@@ -199,9 +199,9 @@ function task5(e) {
             arr[i] = arr[minIndex];
             arr[minIndex] = cur;
         }
-        for (let i = 0; i < arr.length; i++) {
-            jsConsole.writeLine(i + ": " + arr[i])
-        }
+        arr.forEach((item, i) => jsConsole.writeLine(i + ": " + item))
+
+
     }
 }
 
