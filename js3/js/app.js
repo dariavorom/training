@@ -156,17 +156,18 @@ function runTask3 (e) {
     clearResult();
     let text = jsConsole.read("textarea");
     let word = jsConsole.read("input");
-    let check = document.querySelector("#checkbox");
+    let check = document.querySelector("#checkbox").checked;
     let arr = [];
-    function search () {
-        if(check.checked) {
-            arr = text.toLowerCase().split(' ').filter(w => w == word.trim().toLowerCase());
+    function search (...data) {
+        if(data[2]) {
+            arr = data[0].split(' ').filter(w => w === data[1].trim());
+            jsConsole.writeLine(`There are ${arr.length} occurrences into word "${data[1]}"`);
         } else {
-            arr = text.split(' ').filter(w => w == word.trim());
+            arr = data[0].toLowerCase().split(' ').filter(w => w === data[1].trim().toLowerCase());
+            jsConsole.writeLine(`There are ${arr.length} occurrences into word "${data[1]}"`);
         }
     }
-    search();
-    jsConsole.writeLine('There are '+ arr.length + ' occurrences into word ' + '"' + word + '"');
+    search(text,word,check);
 }
 
 //Task4
@@ -343,6 +344,7 @@ function runTask7 (e) {
         for ( let i = 0; i < arr.length; i++) {
             if (arr[i] > arr[i -1] && arr[i] > arr[i+1] && i > 0) {
                 index = i;
+                break;
             }
         }
         return index;
