@@ -16,8 +16,8 @@ a {
 }
 
 header {
-    height: 20px;
-    margin: 0 0 20px 0px;
+    height: auto;
+    margin: 0px;
     padding: 20px;
     display: inline-flex;
     align-items: center;
@@ -39,17 +39,52 @@ header > button {
 header > button:hover, button:hover {
     color: #0094ff;
 }
-header > button:focus {
+button:focus, input:focus, textarea:focus {
     outline: none;
 }
-button {cursor: pointer; background: #e0e0e0;border: 1px solid #949494; width: 192px;height: 30px;padding-left: 0px; color: #1c1c1c;}
-label {
-    display: block;
-    margin-bottom: 5px;
+form {
+    width: 350px;
+    display: inline-flex;
+    flex-direction: column;
 }
-input {background: #e0e0e0;border: 1px solid #949494; width: 180px;height: 25px;padding-left: 10px;background: #282828; color: #e0e0e0; }
-
+button {
+    cursor: pointer;
+    background: #e0e0e0;
+    border: 1px solid #949494;
+    width: 192px;
+    height: 30px;
+    padding-left: 0px;
+    color: #1c1c1c;
+    margin: 0 0 5px auto;
+}
+label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 100%;
+    align-items: center;
+}
+input {
+    background: #e0e0e0;
+    border: 1px solid #949494;
+    width: 180px;height: 25px;
+    padding-left: 10px;
+    background: #282828;
+    color: #e0e0e0;
+}
+input[type="checkbox"] {
+    width: 20px;
+    margin: 0 auto 0 15px;
+}
+textarea {
+    width: 220px;
+    height: 100px;
+}
 .current {
     font-weight: bold;
     text-decoration: underline;
+}
+#task {
+    margin-top: 10px;
+    width: 800px;
 }
