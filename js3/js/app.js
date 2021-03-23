@@ -166,7 +166,7 @@ function runTask3 (e) {
         }
     }
     search();
-    jsConsole.writeLine("There are "+ arr.length + " occurances into word " + word);
+    jsConsole.writeLine('There are '+ arr.length + ' occurrences into word ' + '"' + word + '"');
 }
 
 //Task4
