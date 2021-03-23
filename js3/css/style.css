@@ -44,7 +44,7 @@ button:focus, input:focus, textarea:focus {
 }
 form {
     width: 350px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
 }
 button {
