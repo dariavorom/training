@@ -76,11 +76,11 @@ function runTask2 (e) {
     function brackets (exp) {
         let openBracket = [];
         let closeBracket = [];
+        let noContent = "";
         let answer = "";
         for ( let i = 0; i < exp.length ; i++) {
             if (exp[i] == "(" && exp[i+1] == ")") {
-                answer = "Invalid Expression";
-                break;
+                noContent = "true";
             }
             if (exp[i] == "(") {
                 openBracket.push(exp[i])
@@ -88,12 +88,11 @@ function runTask2 (e) {
             if (exp[i] == ")") {
                 closeBracket.push(exp[i])
                 if (openBracket.length == 0){
-                    answer = "Invalid Expression";;
-                    break;
+                    answer = "Invalid Expression";
                 }
             }
         }
-        if (openBracket.length === closeBracket.length) {
+        if (!noContent && openBracket.length === closeBracket.length) {
             answer = "Valid Expression";
         } else {
             answer = "Invalid Expression";
