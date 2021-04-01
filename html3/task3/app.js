@@ -24,7 +24,7 @@ pSize.addEventListener('change', curPageSize);
 window.addEventListener('load', curPageSize);
  function curPageSize () {
      let size = pSize.value;
-     let tableToShow = [];
+     // let tableToShow = [];
     for (let i = 0; i < size; i++) {
         let tr = document.createElement("tr");
             for (let j = 0; j <arr[i].length; j++) {
@@ -32,12 +32,12 @@ window.addEventListener('load', curPageSize);
                 td.innerHTML = arr[i][j];
                 tr.appendChild(td);
             }
-            tableToShow.push(tr);
+            // tableToShow.push(tr);
             table.appendChild(tr)
-        while (tableToShow.length > size) {
-            table.removeChild(table.lastChild);
-            tableToShow.pop();
-        }
+        // while (tableToShow.length > size) {
+        //     table.removeChild(table.lastChild);
+        //     tableToShow.pop();
+        // }
         while (table.childNodes.length-1 > size) {
             table.removeChild(table.children[0])
         }
