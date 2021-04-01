@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Task1</title>
+</head>
+<body>
+<form method="post">
+    <table>
+        <tr>
+            <td align="right" class="right">
+                <label for="last_name"><b>Last Name</b></label>
+            </td>
+            <td class="left">
+                <input id="last_name" type="text" placeholder="Ivanov"
+                                    autofocus autocomplete="on" required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label for="first_name"><b>First Name</b></label>
+            </td>
+            <td class="left">
+                <input id="first_name" type="text" placeholder="Ivan"
+                                    autocomplete="on" required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label><b>Address</b></label>
+            </td>
+            <td class="left">
+                <textarea id="address" placeholder="17 Hristo Botev Str, floor 3, apt 12"
+                          cols="34" rows="4" autocomplete="on" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label for="city"><b>City</b></label>
+            </td>
+            <td class="left">
+                <input id="city" type="text" placeholder="Kaspichan"
+                       autocomplete="on" required>
+                <label for="state"><b>State</b></label>
+                <input id="state" type="text" size="2"
+                       autocomplete="on">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label for="zip"><b>Zip/Postal Code</b></label>
+            </td>
+            <td class="left">
+                <input id="zip" type="number" placeholder="932560" min="0" max="999999"
+                       autocomplete="on">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label for="country"><b>Country</b></label>
+            </td>
+            <td class="left">
+                <select id="country" name="country" required>
+                    <option value="bulgaria" selected>Bulgaria</option>
+                    <option value="romania">Romania</option>
+                    <option value="belarus">Belarus</option>
+                    <option value="italy">Italy</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="france">France</option>
+                    <option value="spain">Spain</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="egypt">Egypt</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label><b>Phone (country code, area code, number)</b></label>
+            </td>
+            <td class="left">
+                <span>+(</span>
+                <input id="c-code" type="number" placeholder="375" min="0" max="999"
+                       autocomplete="on" maxlength="3" required>
+                <span>)</span>
+                <input id="a-code" type="number" placeholder="44" min="0" max="99"
+                       autocomplete="on" maxlength="2" required>
+                <span>-</span>
+                <input id="number" type="number" placeholder="5554433" min="0" max="9999999"
+                       autocomplete="on" maxlength="7" required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label for="email"><b>Email</b></label>
+            </td>
+            <td class="left">
+                <input id="email" type="email" placeholder="nakov@kospichan.org"
+                        autocomplete="on" required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <b>Birth date</b>
+            </td>
+            <td class="left">
+                <label for="month">Month</label>
+                <input id="month" type="text" placeholder="06"
+                       autocomplete="on" maxlength="2" size="1">
+                <label for="day">Day</label>
+                <input id="day" type="text" placeholder="14"
+                       autocomplete="on" maxlength="2" size="1">
+                <label for="year">Year (4 digits)</label>
+                <input id="year" type="text" placeholder="1980"
+                       autocomplete="on" maxlength="4" size="4">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label for="gender"><b>Gender</b></label>
+            </td>
+            <td class="left">
+                <select id="gender" name="gender" required>
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label><b>Starting date</b></label>
+            </td>
+            <td class="left">
+                <input type="radio" name="start" value="Spring 2006" checked>Spring 2006
+                <input type="radio" name="start" value="Summer 2006">Summer 2006
+            </td>
+        </tr>
+        <tr>
+            <td align="right" class="right">
+                <label><b>Comments/Questions</b></label>
+            </td>
+            <td class="left">
+                <textarea id="comments" placeholder="Please send me more information about lodging"
+                          cols="34" rows="6" required></textarea>
+            </td>
+        </tr>
+        <tr class="buttons">
+            <td colspan="2" align="center">
+                <label for="submit">
+                    <input id="submit" type="submit" value="Submit">
+                </label>
+                <label for="reset">
+                    <input id="reset" type="reset" value="Clear This Form">
+                </label>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
