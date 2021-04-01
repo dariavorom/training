@@ -22,24 +22,24 @@ let arr = [
 pSize.addEventListener('change', curPageSize);
 
 window.addEventListener('load', curPageSize);
- function curPageSize () {
-     let size = pSize.value;
-     let tableToShow = [];
+function curPageSize () {
+    let size = pSize.value;
+    // let tableToShow = [];
     for (let i = 0; i < size; i++) {
         let tr = document.createElement("tr");
-            for (let j = 0; j <arr[i].length; j++) {
-                let td = document.createElement("td");
-                td.innerHTML = arr[i][j];
-                tr.appendChild(td);
-            }
-            tableToShow.push(tr);
-            table.appendChild(tr)
-        while (tableToShow.length > size) {
-            table.removeChild(table.lastChild);
-            tableToShow.pop();
+        for (let j = 0; j <arr[i].length; j++) {
+            let td = document.createElement("td");
+            td.innerHTML = arr[i][j];
+            tr.appendChild(td);
         }
+        // tableToShow.push(tr);
+        table.appendChild(tr)
+        // while (tableToShow.length > size) {
+        //     table.removeChild(table.lastChild);
+        //     tableToShow.pop();
+        // }
         while (table.childNodes.length-1 > size) {
             table.removeChild(table.children[0])
         }
     }
- }
+}
