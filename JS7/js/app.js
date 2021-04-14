@@ -139,6 +139,7 @@ function task2(e) {
     const input1 = document.createElement("input");
     input1.setAttribute("id", "input1");
     input1.value = `1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"`;
+    input1.style.width = "220px";
     label1.innerHTML = "Array: ";
     const label2 = document.createElement("label");
     const input2 = document.createElement("input");
@@ -147,6 +148,7 @@ function task2(e) {
     label2.innerHTML = "Remove: ";
     const btn = document.createElement("button");
     btn.innerHTML = "Execute";
+    btn.style.margin = `0 0 5px auto`;
     form.appendChild(label1);
     label1.appendChild(input1);
     form.appendChild(label2);
@@ -207,4 +209,155 @@ function task3(e) {
     }
 }
 
+//Task4
+document.getElementById("task4").addEventListener("click", task4);
 
+function task4 (e) {
+    e.preventDefault();
+    clearForm();
+    jsConsole.clear("p");
+    task.innerHTML = `Напишите функцию, которая проверяет, содержит ли данный 
+    объект данное свойство.`;
+    const label = document.createElement("label");
+    label.innerHTML = "Property:";
+    const input = document.createElement("input");
+    const span = document.createElement("span");
+    span.innerHTML = "// name, age, height, weight";
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    btn.style.margin = `0 0 5px auto`;
+    form.appendChild(label);
+    label.appendChild(input);
+    label.appendChild(span);
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask4);
+
+    function runTask4 (e) {
+        e.preventDefault();
+        jsConsole.clear("p");
+        let obj = {
+            name: "Darya",
+            age: 32,
+            height: "170cm",
+            weight: "60kl",
+        }
+        let property = jsConsole.read("input");
+
+        function hasProperty (o, prop) {
+            return o.hasOwnProperty(prop);
+        }
+        let hasProp = hasProperty(obj, property);
+
+        jsConsole.writeLine(hasProp);
+    }
+}
+
+//Task5
+document.getElementById("task5").addEventListener("click", task5);
+
+function task5 (e) {
+    e.preventDefault();
+    clearForm();
+    jsConsole.clear("p");
+    task.innerHTML = `Напишите функцию, которая найдет самого молодого 
+    человека в заданном массиве лиц и выведет его / ее полное имя.
+     У каждого человека есть свойства 'firstName', 'lastName' and 'age'`;
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask5);
+
+    function runTask5 (e) {
+        e.preventDefault();
+        jsConsole.clear("p");
+
+        let persons = [
+            { firstName : "Gosho", lastName: "Petrov", age: 32 },
+            { firstName : "Bay", lastName: "Ivan", age: 81 },
+            { firstName : "Oleg", lastName: "Boyko", age: 15 },
+            { firstName : "Elena", lastName: "Saeva", age: 36 },
+        ];
+
+        function getYoungest (arr) {
+            return arr.sort((a,b) => a.age - b.age)
+        }
+
+        let youngest = getYoungest(persons);
+
+        jsConsole.writeLine(`The youngest Person is: <br>
+             ${youngest[0].firstName} ${youngest[0].lastName} - 
+                ${youngest[0].age}`);
+    }
+
+}
+
+//Task6
+document.getElementById("task6").addEventListener("click", task6);
+
+function task6 (e) {
+    e.preventDefault();
+    clearForm();
+    jsConsole.clear("p");
+    task.innerHTML = `Напишите функцию, которая группирует массив лиц 
+    по возрасту, имени или фамилии. Функция должна возвращать 
+    ассоциативный массив с ключами – группами, а значения - массивами 
+    с лицами в этих группах. Используйте функцию перегрузки 
+    (т. е. только одну функцию).`;
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask6);
+
+    function runTask6 (e) {
+        e.preventDefault();
+        jsConsole.clear("p");
+        let persons = [
+            {firstname: "Natalya", lastname: "Osipenko", age: 61},
+            {firstname: "Kristina", lastname: "Osipenko", age: 23},
+            {firstname: "Artem", lastname: "Korhov", age: 25},
+            {firstname: "Artem", lastname: "Seredinskiy", age: 20},
+            {firstname: "Artem", lastname: "Artsiomenka", age: 20},
+            {firstname: "Sergey", lastname: "Osipenko", age: 20},
+            {firstname: "Vinni", lastname: "Puh", age: 15}
+        ];
+        const groupedByAge = groupPeople(persons, "age");
+        console.log(groupedByAge);
+        for (let el in groupedByAge) {
+            jsConsole.writeLine(el)
+        }
+        const groupedByLastName = groupPeople(persons, "lastname");
+        console.log(groupedByLastName);
+        for (let el in groupedByLastName) {
+            jsConsole.writeLine(el)
+        }
+        const groupedByFirstName = groupPeople(persons, "firstname");
+        console.log(groupedByFirstName);
+        for (let el in groupedByFirstName) {
+            jsConsole.writeLine(el)
+        }
+
+        function groupPeople (arr, prop) {
+            if (prop == "age") {
+                return arr.reduce((acc, el) => {
+                    acc[el.age] = acc[el.age] || [];
+                    acc[el.age].push(el)
+                    return acc;
+                }, {});
+            }
+            if (prop == "firstname") {
+                return arr.reduce((acc, el) => {
+                    acc[el.firstname] = acc[el.firstname] || [];
+                    acc[el.firstname].push(el)
+                    return acc;
+                }, {});
+            }
+            if (prop == "lastname") {
+                return arr.reduce((acc, el) => {
+                    acc[el.lastname] = acc[el.lastname] || [];
+                    acc[el.lastname].push(el)
+                    return acc;
+                }, {});
+            }
+        }
+    }
+}
