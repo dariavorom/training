@@ -1,4 +1,7 @@
-﻿body {
+﻿* {
+    box-sizing: border-box;
+}
+body {
     background: black;
     color: white;
     font-family: Verdana;
@@ -43,15 +46,16 @@ button:focus, input:focus, textarea:focus {
     outline: none;
 }
 form {
-    width: 300px;
+    width: 320px;
     display: flex;
     flex-direction: column;
+
 }
 button {
     cursor: pointer;
     background: #e0e0e0;
     border: 1px solid #949494;
-    width: 192px;
+    width: 200px;
     height: 30px;
     padding-left: 0px;
     color: #1c1c1c;
@@ -63,14 +67,21 @@ label {
     margin-bottom: 5px;
     width: 100%;
     align-items: center;
+    position: relative;
+}
+label span {
+    position: absolute;
+    right: -300px;
+    top: 0;
 }
 input {
     border: 1px solid #949494;
-    width: 210px;
+    padding-left: 5px;
+    width: 200px;
     height: 25px;
-    padding-left: 10px;
     background: #282828;
     color: #e0e0e0;
+    position: relative;
 }
 
 #task {
