@@ -265,3 +265,110 @@ function task5(e) {
         jsConsole.writeLine(text.join(''))
     }
 }
+
+//Task6
+document.getElementById("task6").addEventListener("click", task6);
+
+function task6(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `Напишите функцию, которая извлекает содержимое html-страницы 
+    в виде текста. Функция должна возвращать все, что находится в теге, без тегов`;
+    const label = document.createElement("label");
+    label.innerHTML = "HTML: "
+    const textarea = document.createElement("textarea");
+    textarea.setAttribute("cols", "15");
+    textarea.setAttribute("rows", "8");
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(label);
+    label.appendChild(textarea);
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask6);
+
+    function runTask6(e) {
+        e.preventDefault();
+        clearResult();
+        const html = jsConsole.read("textarea");
+        function extract (t) {
+            return t.replace(/<(\/?[^>]+)>/g, '');
+        }
+        jsConsole.writeLine(extract(html))
+    }
+}
+
+//Task7
+document.getElementById("task7").addEventListener("click", task7);
+
+function task7(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `Написать скрипт, который разбирает URL-адрес,
+     вводимый в формате: \`[protocol]://[server]/[resource]\` 
+     и извлекает из него элементы \`[протокол]\`, \`[сервер]\` и \`[ресурс]. 
+     Возврат элементов в объекте JSON.`;
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    label.innerHTML = "URL: ";
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(label);
+    form.appendChild(btn);
+    label.appendChild(input);
+    btn.addEventListener("click", runTask7);
+
+    function runTask7 (e) {
+        e.preventDefault();
+        clearResult();
+
+         function parseURL () {
+             let originUrl = jsConsole.read("input");
+             let url = new URL(originUrl);
+             let newUrl = JSON.parse(JSON.stringify({protocol: url.protocol, server: url.host, resourse: url.pathname}))
+             jsConsole.writeLine(`protocol: ${newUrl.protocol.split(':').join('')}`);
+             jsConsole.writeLine(`server: ${newUrl.server}`);
+             jsConsole.writeLine(`resource: ${newUrl.resourse}`);
+             return newUrl;
+         }
+         parseURL();
+    }
+}
+document.getElementById("task8").addEventListener("click", task8);
+
+function task8(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `Напишите JavaScript функцию, заменяющую в HTML-документе, 
+    представленном в виде строки, все теги <a href="...">...< / a>\` 
+    соответствующими тегами \`[URL=...]...[/URL]".`;
+    const label = document.createElement("label");
+    label.innerHTML = "HTML: "
+    const textarea = document.createElement("textarea");
+    textarea.setAttribute("cols", "15");
+    textarea.setAttribute("rows", "8");
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(label);
+    label.appendChild(textarea);
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask8);
+
+    function runTask8(e) {
+        e.preventDefault();
+        clearResult();
+        const html = jsConsole.read("textarea");
+        function replace (t) {
+            return t.replace(/<\/a>/g, '[/URL]')
+                .replace(/<a[^>]*>(.*?)/g,
+                    function (match) {
+                        return match.split('"').join('')
+                            .replace(/<a href/g, "[URL")
+                            .replace(/[>]/g, "]")
+                    });
+        }
+        jsConsole.writeLine(replace(html))
+    }
+}

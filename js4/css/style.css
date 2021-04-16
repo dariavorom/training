@@ -1,4 +1,7 @@
-﻿body {
+﻿* {
+    box-sizing: border-box;
+}
+body {
     background: black;
     color: white;
     font-family: Verdana;
@@ -51,7 +54,7 @@ button {
     cursor: pointer;
     background: #e0e0e0;
     border: 1px solid #949494;
-    width: 192px;
+    width: 200px;
     height: 30px;
     padding-left: 0px;
     color: #1c1c1c;
@@ -65,17 +68,14 @@ label {
     align-items: center;
 }
 input {
-    background: #e0e0e0;
     border: 1px solid #949494;
-    width: 180px;height: 25px;
+    width: 200px;
+    height: 25px;
     padding-left: 10px;
     background: #282828;
     color: #e0e0e0;
 }
-input[type="checkbox"] {
-    width: 20px;
-    margin: 0 auto 0 15px;
-}
+
 textarea {
     width: 220px;
     height: 100px;
