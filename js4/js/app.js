@@ -335,6 +335,8 @@ function task7(e) {
         parseURL();
     }
 }
+
+//Task8
 document.getElementById("task8").addEventListener("click", task8);
 
 function task8(e) {
@@ -370,5 +372,79 @@ function task8(e) {
                     });
         }
         jsConsole.writeLine(replace(html))
+    }
+}
+
+
+//Task9
+document.getElementById("task9").addEventListener("click", task9);
+
+function task9(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `Напишите функцию для извлечения всех адресов электронной почты из данного текста. 
+    Все подстроки, соответствующие  \'<identifier>@<host>...<domain>\' должны быть распознаны 
+    как электронная почта. Возвращайте e-mail в виде массива строк.`;
+    const label = document.createElement("label");
+    label.innerHTML = "Text: "
+    const textarea = document.createElement("textarea");
+    textarea.style.width = "250px";
+    textarea.style.height = "150px";
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(label);
+    label.appendChild(textarea);
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask10);
+
+    function runTask10(e) {
+        e.preventDefault();
+        clearResult();
+        let text = jsConsole.read("textarea");
+
+        function extractEmail (t) {
+            return t.match(/\S+@\S+\.\S+/g);
+        }
+        let array = extractEmail(text);
+        array.forEach(el => jsConsole.writeLine(el));
+    }
+}
+
+//Task10
+document.getElementById("task10").addEventListener("click", task10);
+
+function task10(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `Написать программу, которая извлекает из заданного 
+    текста все палиндромы, например, "ABBA", "lamal" "exe".`;
+    const label = document.createElement("label");
+    label.innerHTML = "HTML: "
+    const textarea = document.createElement("textarea");
+    textarea.style.width = "250px";
+    textarea.style.height = "150px";
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(label);
+    label.appendChild(textarea);
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask10);
+
+    function runTask10 (e) {
+        e.preventDefault();
+        clearResult();
+        let text = jsConsole.read("textarea");
+
+        function palindrome (s) {
+            s = s.split(' ').map (el => el.replace(/[,";:'. ]/g, ""));
+            s.forEach(el => {
+                if (el.split("").reverse().join("") === el && el !== "") {
+                    jsConsole.writeLine(el);
+                }
+            })
+        }
+        palindrome(text);
     }
 }
