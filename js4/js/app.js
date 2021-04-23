@@ -448,3 +448,102 @@ function task10(e) {
         palindrome(text);
     }
 }
+
+//Task11
+document.getElementById("task11").addEventListener("click", task11);
+
+function task11(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `. Напишите функцию, которая форматирует строку с помощью заполнителей.`;
+    const label = document.createElement("label");
+    label.innerHTML = "Text: "
+    const textarea = document.createElement("textarea");
+    textarea.style.width = "250px";
+    textarea.style.height = "100px";
+    textarea.value = "The coordinates of the {0} are X: {1} and Y: {2}.";
+    const btn = document.createElement("button");
+    btn.innerHTML = "Execute";
+    form.appendChild(label);
+    label.appendChild(textarea);
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask11);
+
+    function runTask11(e) {
+        e.preventDefault();
+        clearResult();
+        let text = jsConsole.read("textarea");
+
+        function stringFormat (str, ...arg) {
+            for (let i = 0; i < arg.length; i++) {
+                str = str.replace(new RegExp(`\\{${i}\\}`), arg[i])
+            }
+            return str;
+        }
+        jsConsole.write(stringFormat(text, "rectangle", 25, 36))
+    }
+}
+ //Task12
+document.getElementById("task12").addEventListener("click", task12);
+
+function task12(e) {
+    e.preventDefault();
+    clearForm();
+    clearResult();
+    task.innerHTML = `Написать функцию, которая создает HTML UL, используя шаблон для каждого 
+    HTML LI. Источник списка должен быть массивом элементов. Замените все заполнители,
+     помечен-ные\` - {...}- ' значением соответствующего свойства объекта.`;
+    const btn = document.createElement("button");
+    btn.style.margin = "0px";
+    btn.innerHTML = "Execute";
+
+    form.appendChild(btn);
+    btn.addEventListener("click", runTask12);
+
+    function runTask12(e) {
+        e.preventDefault();
+        clearResult();
+
+        let people = [
+            {name: "Шапокляк", age: 55},
+            {name: "Чебурашка", age: 17},
+            {name: "Крыска-Лариска", age: 18},
+            {name: "Крокодильчик", age: 26},
+            {name: "Турист-завтрак крокодильчика", age: 32},
+        ]
+        const p = document.querySelector("p");
+        const div = document.createElement("div");
+        const strong = document.createElement("strong");
+        const span = document.createElement("span");
+
+        strong.innerHTML = '-{name}-';
+        span.innerHTML = `-{age}-`;
+
+        div.appendChild(strong);
+        div.appendChild(span);
+        p.appendChild(div);
+
+        div.setAttribute('data-type', 'template');
+        div.setAttribute('id', 'list-item');
+
+        let divPeople = document.getElementById("list-item");
+        let template = divPeople.innerHTML;
+        let peopleList = generateHtmlList(people, template);
+        divPeople.innerHTML = peopleList;
+
+        function generateHtmlList(p, t) {
+            let list = document.createElement("ul");
+            for (let i = 0; i < p.length; i++) {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = t.replace(/{name}/, people[i].name)
+                    .replace(/{age}/, people[i].age);
+                list.appendChild(listItem);
+            }
+            while (divPeople.firstChild) {
+                divPeople.removeChild(divPeople.firstChild);
+            }
+            return list.innerHTML;
+        }
+    }
+}
