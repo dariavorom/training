@@ -46,6 +46,13 @@
 			return parseFloat(text);
 		}
 
+		self.clear = function clearConsole(inputSelector) {
+			var element = document.querySelector(inputSelector);
+			element.remove();
+			textArea = document.createElement("p");
+			consoleElement.appendChild(textArea);
+		}
+
 		return self;
 	}
 	jsConsole = new createJsConsole("#console");
