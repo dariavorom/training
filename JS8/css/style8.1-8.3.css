@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding-top: 20px;
+}
+/*Task 8.1*/
+.task8_1 {
+    border: 1px solid blue;
+    width: 400px;
+    margin: 15px;
+    padding: 10px;
+}
+.parent div {
+    width: 80%;
+}

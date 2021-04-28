@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task8.2</title>
+</head>
+<body>
+<form>
+    <input type="text">
+    <button>Поместим в консоль</button>
+</form>
+<script>
+    const input = document.querySelector('[type="text"]');
+    document.querySelector('button').addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(input.value);
+        input.value = '';
+    })
+</script>
+</body>
+</html>

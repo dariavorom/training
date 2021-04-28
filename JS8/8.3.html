@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task8.3</title>
+</head>
+<body>
+    <form>
+        <input type="color">
+        <button>Change background color</button>
+    </form>
+    <script>
+        const input = document.querySelector('[type="color"]');
+        const body = document.body;
+        document.querySelector('button').addEventListener('click', (e) => {
+            e.preventDefault();
+            body.style.backgroundColor = input.value;
+        })
+    </script>
+</body>
+</html>
