@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.1rem;
+    font-family: Arial, serif ;
+}
+
+form {
+    border: 2px solid blue;
+    width: 650px;
+    padding: 10px;
+}
+form p {
+    font-style: italic;
+}
+form + button {
+    margin-top: 10px;
+}
+input {
+    margin: 5px;
+    height: 30px;
+    width: 150px;
+    font-size: 1rem;
+}
+input::placeholder {
+    font-size: .9rem;
+    color: blue;
+}
+button {
+    height: 30px;
+    width: 150px;
+    border-radius: 3px;
+    border: 2px solid blue;
+    margin: 0;
+    padding: 0;
+    font-size: .7rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+button:hover {
+    background: #92bcd2;
+}
