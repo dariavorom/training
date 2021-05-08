@@ -1,0 +1,25 @@
+div {
+    margin: 5px;
+}
+div span {
+    display: inline-block;
+    margin-right: 10px;
+}
+button {
+    margin: 10px;
+    cursor: pointer;
+    height: 30px;
+    border: 1px solid #1c2463;
+    background: #eaf3fc;
+    border-radius: 3px;
+    transition: background-color .2s ease-out;
+}
+button:hover {
+    background-color: #92bcd2;
+}
+#postRequest input {
+    margin: 0 5px;
+}
+#postRequest button {
+    display: block;
+}
